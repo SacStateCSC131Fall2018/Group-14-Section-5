@@ -1,5 +1,5 @@
 // CSC 131 Group #14 Section-5
-// Pirex Frame
+// Pirex Frame 
 
 import javax.swing.*;
 import java.awt.BorderLayout;
