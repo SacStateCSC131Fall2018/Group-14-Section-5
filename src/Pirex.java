@@ -2,7 +2,7 @@
 // Pirex Driver
 
 public class Pirex {
-	public static void main(String[] args) {
+	public static void main(String[] args) { //
 		PirexLayoutFrame p;
 		p = new PirexLayoutFrame();
 		p.setSize(800,600);

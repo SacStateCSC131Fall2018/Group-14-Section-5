@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PirexLayoutFrame extends JFrame implements ActionListener{
-	Container contentPane;
+	Container contentPane; //
 	JMenuBar mb; // menu bar
 	JMenu menu1, menu2; // drop down menu
 	JMenuItem item1, item2, item3, item4; // items to be added to drop down menu
