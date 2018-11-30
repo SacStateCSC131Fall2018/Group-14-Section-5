@@ -1,6 +1,7 @@
-import java.awt.FlowLayout;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,23 +30,29 @@ public class SearchForDocsPanel extends JPanel {
 		queryPanel = new JPanel();
 		textFieldPanel = new JPanel();
 		
+		
+		
 		//setting layouts
-		queryPanel.setLayout(new FlowLayout());
-		textFieldPanel.setLayout(new GridLayout(2,1,10,30));
-		this.setLayout(new GridLayout(2,1, 10, 10));
+		queryPanel.setLayout(new BorderLayout());
+		textFieldPanel.setLayout(new GridLayout(2,1,0,20));
+		this.setLayout(new BorderLayout(0, 10));
 		
 		//components for queryPanel
-		queryPanel.add(query);
-		queryPanel.add(queryField);
-		queryPanel.add(clearButton);
+		queryPanel.add(query, BorderLayout.WEST);
+		queryPanel.add(queryField, BorderLayout.CENTER);
+		queryPanel.add(clearButton, BorderLayout.EAST);
 		
 		//components for textFieldPanel
 		textFieldPanel.add(topField);
 		textFieldPanel.add(bottomField);
+
 		
 		//components for SearchForDocsPanel
-		this.add(queryPanel);
-		this.add(textFieldPanel);
+		this.add(queryPanel, BorderLayout.NORTH);
+		this.add(textFieldPanel, BorderLayout.CENTER);
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 3, 3, 3)));
+		
+		
 		
 	}
 	
