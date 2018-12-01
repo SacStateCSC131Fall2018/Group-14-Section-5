@@ -29,9 +29,7 @@ public class SearchForDocsPanel extends JPanel {
 		query = new JLabel("Query:");
 		queryPanel = new JPanel();
 		textFieldPanel = new JPanel();
-		
-		
-		
+
 		//setting layouts
 		queryPanel.setLayout(new BorderLayout());
 		textFieldPanel.setLayout(new GridLayout(2,1,0,20));
@@ -45,19 +43,15 @@ public class SearchForDocsPanel extends JPanel {
 		//components for textFieldPanel
 		textFieldPanel.add(topField);
 		textFieldPanel.add(bottomField);
-
 		
 		//components for SearchForDocsPanel
 		this.add(queryPanel, BorderLayout.NORTH);
 		this.add(textFieldPanel, BorderLayout.CENTER);
 		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 3, 3, 3)));
-		
-		
-		
+				
 	}
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {	
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(400, 400);
@@ -65,9 +59,5 @@ public class SearchForDocsPanel extends JPanel {
 		
 		SearchForDocsPanel panel = new SearchForDocsPanel();
 		frame.add(panel);
-
-		
 	}
-	
-
 }

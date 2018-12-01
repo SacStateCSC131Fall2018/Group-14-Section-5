@@ -8,5 +8,4 @@ public class Pirex {
 		p.setSize(800,600);
 		p.setVisible(true);
     }
-
 }
