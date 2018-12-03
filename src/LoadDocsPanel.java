@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,29 +18,24 @@ import javax.swing.border.Border;
 public class LoadDocsPanel extends JPanel implements ActionListener {
 	
 	private static final long serialVersionUID = 2L;
-	
 	public JLabel textFile;
 	public JLabel textFileType;
 	public JLabel title;
 	public JLabel author;
-	
 	public JTextField textFileField;
 	public JTextField titleField;
 	public JTextField authorField;
-	
 	public JTextArea summary;
-	
 	public JButton browse;
 	public JButton process;
-	
 	public JComboBox<String> typeBox;
-	
 	public JPanel browsePanel;
 	public JPanel typePanel;
 	public JPanel titleAuthPanel;
-	public JPanel topPanel;
 	public JPanel titlePanel;
 	public JPanel authPanel;
+	public JPanel processPanel;
+	public JPanel topPanel;
 	public JPanel bottomPanel;
 	
 	public LoadDocsPanel() {
@@ -52,7 +48,7 @@ public class LoadDocsPanel extends JPanel implements ActionListener {
 		//buttons
 		process = new JButton("Process");
 		browse = new JButton("Browse");
-		
+		process.setEnabled(false);
 		//
 		String[] fileTypes = {"Project Gutenberg File", 
 							  "Txt"	
@@ -66,14 +62,15 @@ public class LoadDocsPanel extends JPanel implements ActionListener {
 		authorField = new JTextField(30);
 		summary = new JTextArea();
 		
-		browsePanel = new JPanel(new BorderLayout(2,0));
-		typePanel = new JPanel(new BorderLayout(2,0));
-		titlePanel = new JPanel(new BorderLayout(1,0));
-		authPanel = new JPanel(new BorderLayout(1,0));
-		titleAuthPanel = new JPanel(new GridLayout(1,2));
+		browsePanel = new JPanel(new BorderLayout(5,0));
+		typePanel = new JPanel(new BorderLayout(5,0));
+		titlePanel = new JPanel(new BorderLayout(5,0));
+		authPanel = new JPanel(new BorderLayout(5,0));
+		titleAuthPanel = new JPanel(new GridLayout(1,2,5,0));
 		topPanel = new JPanel(new GridLayout(3,1,0,10));
-		bottomPanel = new JPanel(new BorderLayout());
-		this.setLayout(new BorderLayout(0,5));
+		processPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		bottomPanel = new JPanel(new BorderLayout(0,1));
+		this.setLayout(new BorderLayout());
 		
 		//browsePanel
 		browsePanel.add(textFile, BorderLayout.WEST);
@@ -96,11 +93,14 @@ public class LoadDocsPanel extends JPanel implements ActionListener {
 		topPanel.add(typePanel);
 		topPanel.add(titleAuthPanel);
 		
-		bottomPanel.add(process, BorderLayout.NORTH);
+		processPanel.add(process);
+		bottomPanel.add(processPanel, BorderLayout.NORTH);
+		//bottomPanel.add(process, BorderLayout.NORTH);
 		bottomPanel.add(summary, BorderLayout.CENTER);
 		bottomPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
-		
-		Border bottom = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK);
+		Border bottomInside = BorderFactory.createEmptyBorder(5,5,5,5);
+		Border bottomOutside = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK);
+		Border bottom = BorderFactory.createCompoundBorder(bottomOutside, bottomInside);
 		Border top = BorderFactory.createEmptyBorder(5, 5, 5, 5);
 		topPanel.setBorder(BorderFactory.createCompoundBorder(top, bottom));
 		
@@ -112,8 +112,12 @@ public class LoadDocsPanel extends JPanel implements ActionListener {
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent e) {
+		
+		//String event = e.getActionCommand();
+		//if(event.equals("Browse"))
+			//JFrame
+		
 		
 	}
 	
