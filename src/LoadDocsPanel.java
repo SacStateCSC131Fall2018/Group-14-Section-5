@@ -107,8 +107,6 @@ public class LoadDocsPanel extends JPanel implements ActionListener {
 		this.add(topPanel, BorderLayout.NORTH);
 		this.add(bottomPanel, BorderLayout.CENTER);
 		
-		
-		
 	}
 	
 	@Override
