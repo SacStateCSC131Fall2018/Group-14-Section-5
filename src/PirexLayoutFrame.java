@@ -11,7 +11,7 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 	Container contentPane; //
 	JMenuBar mb; // menu bar
 	JMenu menu1, menu2, menu3, menu4; // drop down menu
-	JMenuItem item1, item2, item3, item4, item5,item6,item7, item8, item9, item10, item11; // items to be added to drop down menu
+	JMenuItem item1, item2, item3, item4, item5,item6,item7, item8, item9, item10, item11, item12; // items to be added to drop down menu
 	JTabbedPane tabbedPane;
 	
 	public PirexLayoutFrame() {
@@ -41,6 +41,7 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		item9 = new JMenuItem("Remove Opus");
 		item10 = new JMenuItem("Edit Author");
 		item11= new JMenuItem("Edit Title");
+		item12 = new JMenuItem("Source"); 
 		menu1.add(item1);
 		menu1.add(item2);
 		menu1.add(item4);
@@ -50,6 +51,7 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		menu2.add(item7);
 		menu3.add(item8);
 		menu3.add(item9);
+		menu3.add(item12);
 		menu4.add(item10);
 		menu4.add(item11);
 		menu3.add(menu4);
