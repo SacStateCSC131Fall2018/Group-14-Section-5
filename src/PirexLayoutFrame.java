@@ -44,7 +44,8 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		contentPane.add(mb, BorderLayout.NORTH);
 		
 		item3.addActionListener(this); // about
-		item4.addActionListener(this); // exit
+		item6.addActionListener(this); // exit
+		
 		
 		// create the panels for the [3] tabs
 		SearchForDocsPanel searchPanel = new SearchForDocsPanel();
