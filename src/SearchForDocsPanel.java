@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.Document;
 
 public class SearchForDocsPanel extends JPanel implements ActionListener {
 
@@ -40,6 +44,8 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 		numLoadedPanel = new JPanel();
 		textFieldPanel = new JPanel();
 		tfbottomPart = new JPanel();
+		
+		queryField.getDocument().addDocumentListener(new docListener());
 
 		//setting layouts
 		queryPanel.setLayout(new BorderLayout());
@@ -51,6 +57,9 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 		numLoaded.setVisible(false);
 		topField.setEditable(false);
 		bottomField.setEditable(false);
+		
+		topField.setBackground(Color.white);
+		bottomField.setBackground(Color.white);
 		
 		//components for queryPanel
 		queryPanel.add(query, BorderLayout.WEST);
@@ -77,6 +86,30 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 		String event = e.getActionCommand();
 		if(event.equals("Clear")){
 			queryField.setText("");
+		}
+		
+	}
+	
+	public class docListener implements DocumentListener {
+
+		@Override
+		public void changedUpdate(DocumentEvent e) {
+			
+			
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent e) {
+			Document doc = (Document)e.getDocument();
+			if(doc.getLength() != 0)
+				numLoaded.setVisible(true);
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent e) {
+			Document doc = (Document)e.getDocument();
+			if(doc.getLength() == 0)
+				numLoaded.setVisible(false);
 		}
 		
 	}
