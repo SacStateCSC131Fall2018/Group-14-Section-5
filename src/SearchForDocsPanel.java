@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,9 +20,12 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 	private JTextField bottomField;
 	private JTextField queryField;
 	private JButton clearButton;
+	private JLabel numLoaded;
 	private JLabel query;
 	private JPanel queryPanel;
 	private JPanel textFieldPanel;
+	private JPanel tfbottomPart;
+	private JPanel numLoadedPanel;
 	
 	public SearchForDocsPanel() {
 		
@@ -31,22 +35,35 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 		clearButton = new JButton("Clear");
 		clearButton.addActionListener(this);
 		query = new JLabel("Query:");
+		numLoaded = new JLabel("Number Loaded");
 		queryPanel = new JPanel();
+		numLoadedPanel = new JPanel();
 		textFieldPanel = new JPanel();
+		tfbottomPart = new JPanel();
 
 		//setting layouts
 		queryPanel.setLayout(new BorderLayout());
-		textFieldPanel.setLayout(new GridLayout(2,1,0,20));
+		numLoadedPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		textFieldPanel.setLayout(new GridLayout(2,1));
+		tfbottomPart.setLayout(new BorderLayout());
 		this.setLayout(new BorderLayout(0, 10));
+		
+		numLoaded.setVisible(false);
+		topField.setEditable(false);
+		bottomField.setEditable(false);
 		
 		//components for queryPanel
 		queryPanel.add(query, BorderLayout.WEST);
 		queryPanel.add(queryField, BorderLayout.CENTER);
 		queryPanel.add(clearButton, BorderLayout.EAST);
 		
+		numLoadedPanel.add(numLoaded);
+		tfbottomPart.add(numLoadedPanel, BorderLayout.NORTH);
+		tfbottomPart.add(bottomField, BorderLayout.CENTER);
+		
 		//components for textFieldPanel
 		textFieldPanel.add(topField);
-		textFieldPanel.add(bottomField);
+		textFieldPanel.add(tfbottomPart);
 		
 		//components for SearchForDocsPanel
 		this.add(queryPanel, BorderLayout.NORTH);
@@ -68,9 +85,10 @@ public class SearchForDocsPanel extends JPanel implements ActionListener {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(400, 400);
-		frame.setVisible(true);
-		
 		SearchForDocsPanel panel = new SearchForDocsPanel();
 		frame.add(panel);
+		frame.setVisible(true);
+		
+		
 	}
 }
