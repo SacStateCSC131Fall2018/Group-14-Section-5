@@ -28,8 +28,8 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		menu3 = new JMenu("Options");
 		menu4 = new JMenu("Edit Opus");
 		mb.add(menu1);
-		mb.add(menu2);
 		mb.add(menu3);
+		mb.add(menu2);
 		item1 = new JMenuItem("Open");
 		item2 = new JMenuItem("Export");
 		item3 = new JMenuItem("About");
