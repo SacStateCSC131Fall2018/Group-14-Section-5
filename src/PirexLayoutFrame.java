@@ -50,13 +50,13 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		
 		// create the panels for the [3] tabs
 		SearchForDocsPanel searchPanel = new SearchForDocsPanel();
-		// LoadDocsPanel loadPanel = new LoadDocsPanel();
+		LoadDocsPanel loadPanel = new LoadDocsPanel();
 		SumDocsPanel sumPanel = new SumDocsPanel();
 		
 		// tabbed pane, center
 		tabbedPane = new JTabbedPane();
 		tabbedPane.add("Search for Documents", searchPanel); 
-		tabbedPane.add("Load Documents", null);
+		tabbedPane.add("Load Documents", loadPanel);
 		tabbedPane.add("Summarize Documents", sumPanel);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 	}
