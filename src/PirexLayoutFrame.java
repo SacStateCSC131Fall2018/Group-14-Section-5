@@ -45,6 +45,7 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		
 		item3.addActionListener(this); // about
 		item6.addActionListener(this); // exit
+		item7.addActionListener(this); //Index 
 		
 		
 		// create the panels for the [3] tabs
@@ -69,6 +70,10 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		if(event.equals("About")) {
 			JFrame frame = new JFrame("Info");
 			JOptionPane.showMessageDialog(frame, "Helper");
+		}
+		if(event.equals("Index")) {
+			JFrame frame = new JFrame("indexInfo");
+			JOptionPane.showMessageDialog(frame, "Information about features would go here."); 
 		}
 	}
 	
