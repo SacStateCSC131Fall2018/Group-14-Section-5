@@ -21,7 +21,7 @@ public class PirexLayoutFrame extends JFrame implements ActionListener{
 		
 		contentPane.setLayout(new BorderLayout());
 		
-		// Menu Bar components, north
+		// Menu Bar components, north.
 		mb = new JMenuBar();
 		menu1 = new JMenu("File");
 		menu2 = new JMenu("Help");
